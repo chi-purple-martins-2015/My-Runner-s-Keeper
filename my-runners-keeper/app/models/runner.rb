@@ -5,6 +5,8 @@ class Runner < ActiveRecord::Base
   validates :phone_number, length: { minimum: 10 }
   validates :email, format: { with: /@/, message: "Sorry, that is not a proper email address." }
 
+  has_secure_password
+
   def full_name
     "#{self.first_name} #{self.last_name}"
   end

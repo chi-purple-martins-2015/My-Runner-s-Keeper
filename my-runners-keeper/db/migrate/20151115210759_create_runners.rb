@@ -7,6 +7,9 @@ class CreateRunners < ActiveRecord::Migration
       t.boolean :captain
       t.string :email
       t.integer :phone_number
+      t.string :img_url
+      t.string :password_digest
+
 
       t.timestamps null: false
     end
