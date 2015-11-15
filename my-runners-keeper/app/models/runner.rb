@@ -1,9 +1,9 @@
 class Runner < ActiveRecord::Base
   has_many :runs
-  validates_presence_of :first_name
-  validates_presence_of :last_name
-  validates_length_of :phone_number, minimum: 10
-  validates_format_of :email, :with => /@/
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :phone_number, length: { minimum: 10 }
+  validates :email, format: { with: /@/, message: "Sorry, that is not a proper email address." }
 
   def full_name
     "#{self.first_name} #{self.last_name}"
