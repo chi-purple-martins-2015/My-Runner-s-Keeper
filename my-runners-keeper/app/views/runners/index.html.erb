@@ -1,0 +1,4 @@
+<h1> Here is a list of all runners in our group </h1>
+<% @runners.each do |runner| %>
+  <li> <a href="runners/<%= runner.id%>"> <%= runner.full_name %> </a> </li>
+<% end %>
