@@ -1,8 +1,20 @@
 Rails.application.routes.draw do
 
+  get 'sessions/login' => 'sessions#login'
+
+  post 'sessions/logout' => 'sessions#logout'
+
   root 'pages#index'
-  get 'runners/:id' => 'runners#show'
+
+  get 'runners/:id' => 'runners#show', as: 'runner'
+
   get 'runners' => 'runners#index'
+
+  get 'runners/new' => 'runners#new'
+
+  post 'runners/create' => 'runners#create'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
